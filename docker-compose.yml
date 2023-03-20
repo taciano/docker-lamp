@@ -26,15 +26,6 @@ services:
           - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
         networks:
             - default
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        container_name: 'phpmyadmin'
-        ports:
-            - 8080:80
-        environment:
-            MYSQL_ROOT_PASSWORD: 12345
-        networks:
-            - default
 networks:
     default:
         driver: bridge
